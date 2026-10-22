@@ -187,7 +187,7 @@ h3 { font-size: 1.3rem; }
         </ul>
       </div>
       <form class="form" data-form="seller" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="hidden" name="_subject" value="Seller lead from wcre.us">
+        <input type="hidden" name="_subject" value="Seller lead from wcre.llc">
         <div class="row">
           <label for="s-name">Your name<input id="s-name" name="name" autocomplete="name" required></label>
           <label for="s-phone">Phone<input id="s-phone" name="phone" type="tel" autocomplete="tel" required></label>
@@ -220,7 +220,7 @@ h3 { font-size: 1.3rem; }
         <p class="lede">Our renovated homes are listed here first. There are no homes on the market right now. Leave your email and we will tell you when the next one is ready.</p>
       </div>
       <form class="form inline" data-form="buyer" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="hidden" name="_subject" value="Buyer list signup from wcre.us">
+        <input type="hidden" name="_subject" value="Buyer list signup from wcre.llc">
         <label for="b-email">Email<input id="b-email" name="email" type="email" autocomplete="email" required></label>
         <label for="b-area">Area or neighborhood you want<input id="b-area" name="area"></label>
         <button class="btn btn-solid" type="submit">Notify me</button>
@@ -237,7 +237,7 @@ h3 { font-size: 1.3rem; }
         <p class="small">Williams Crew Real Estate is an Equal Housing Opportunity provider.</p>
       </div>
       <form class="form" data-form="renter" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="hidden" name="_subject" value="Rental inquiry from wcre.us">
+        <input type="hidden" name="_subject" value="Rental inquiry from wcre.llc">
         <div class="row">
           <label for="r-name">Your name<input id="r-name" name="name" autocomplete="name" required></label>
           <label for="r-phone">Phone<input id="r-phone" name="phone" type="tel" autocomplete="tel"></label>
@@ -269,7 +269,7 @@ h3 { font-size: 1.3rem; }
     <div class="wrap contact">
       <h2 id="contact-h" class="section-h">Contact</h2>
       <dl class="contact-list">
-        <div><dt>Email</dt><dd><a href="mailto:info@wcre.us">info@wcre.us</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:info@wcre.llc">info@wcre.llc</a></dd></div>
         <div><dt>Call or text Derrick</dt><dd><a href="tel:+15133608285">(513) 360-8285</a></dd></div>
         <div><dt>Call or text Tomeka</dt><dd><a href="tel:+15138572579">(513) 857-2579</a></dd></div>
       </dl>
@@ -296,7 +296,7 @@ document.querySelectorAll('form[data-form]').forEach(form => {
     try {
       const r = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
       if (r.ok) { form.reset(); note.textContent = 'Thanks. We received your message and will be in touch soon.'; }
-      else note.textContent = 'That did not go through. Please try again, or email info@wcre.us.';
+      else note.textContent = 'That did not go through. Please try again, or email info@wcre.llc.';
     } catch { note.textContent = 'That did not go through. Please check your connection and try again.'; }
   });
 });
