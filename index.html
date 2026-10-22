@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WCRE | Williams Crew Real Estate</title>
+<meta name="description" content="Williams Crew Real Estate buys, restores, sells, and rents homes, leaving every community better than we found it.">
+<meta property="og:title" content="WCRE | Williams Crew Real Estate">
+<meta property="og:description" content="Williams Crew Real Estate buys, restores, sells, and rents homes, leaving every community better than we found it.">
+<meta property="og:image" content="/assets/wcre-logo-black-1200.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&family=Public+Sans:wght@400;600&display=swap">
+<style>/* Layout: black-and-white brand, a sticky top bar, alternating paper and ink bands, two-column splits that stack on phones */
+:root {
+  --paper: #ffffff;
+  --ink: #111111;
+  --stone: #f1f1ee;
+  --muted: #5b5b57;
+  --line: #d9d9d4;
+  --on-ink-muted: #b4b4ad;
+  --display: "Chakra Petch", "Arial Narrow", system-ui, sans-serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+a { color: inherit; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); }
+.bar { max-width: 1120px; margin: 0 auto; padding: 12px max(20px, env(safe-area-inset-right, 0px)) 12px max(20px, env(safe-area-inset-left, 0px)); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand svg { height: 44px; width: auto; display: block; }
+.brand-name { font-family: var(--display); font-weight: 600; font-size: 13px; line-height: 1.15; letter-spacing: .12em; text-transform: uppercase; }
+.nav { display: flex; gap: 4px; flex-wrap: wrap; }
+.nav a { text-decoration: none; font-weight: 600; font-size: 15px; padding: 8px 12px; }
+.nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.nav .nav-cta { background: var(--ink); color: var(--paper); }
+.nav .nav-cta:hover { text-decoration: none; background: #333; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #2f6fde; outline-offset: 2px; }
+
+section { padding-block: 88px; }
+.band { background: var(--stone); }
+.band.dark { background: var(--ink); color: var(--paper); }
+.band.dark .lede, .band.dark .small { color: var(--on-ink-muted); }
+
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.08; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); letter-spacing: -.01em; text-transform: uppercase; }
+.section-h { font-size: clamp(1.9rem, 3.6vw, 2.6rem); text-transform: uppercase; margin-bottom: 20px; }
+h3 { font-size: 1.3rem; }
+.eyebrow, .tag { font-family: var(--display); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 58ch; margin: 0; }
+.small { font-size: 14px; color: var(--muted); margin-top: 18px; }
+
+.hero { padding-block: 72px 96px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.hero-copy { display: grid; gap: 22px; }
+.hero-mark svg { width: 100%; max-width: 360px; height: auto; display: block; margin-left: auto; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
+.btn { display: inline-block; font: 600 16px/1 var(--body); padding: 16px 22px; text-decoration: none; border: 2px solid var(--ink); cursor: pointer; }
+.btn-solid { background: var(--ink); color: var(--paper); }
+.btn-solid:hover { background: #333; border-color: #333; }
+.btn-line { background: transparent; color: var(--ink); }
+.btn-line:hover { background: var(--ink); color: var(--paper); }
+.btn-invert { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.btn-invert:hover { background: var(--stone); }
+
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+.card { padding: 28px 28px 32px 0; display: grid; gap: 12px; align-content: start; }
+.card + .card { padding-left: 28px; border-left: 1px solid var(--line); }
+.card p { margin: 0; color: var(--muted); }
+.card a { font-weight: 600; }
+
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.ticks { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 12px; }
+.ticks li { padding-left: 28px; position: relative; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: .55em; width: 12px; height: 12px; background: currentColor; }
+
+.form { display: grid; gap: 16px; }
+.form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; }
+.form input, .form select, .form textarea { font: 16px/1.4 var(--body); padding: 12px 14px; border: 1.5px solid var(--ink); background: var(--paper); color: var(--ink); border-radius: 0; width: 100%; min-width: 0; }
+.band.dark .form input, .band.dark .form select, .band.dark .form textarea { border-color: var(--paper); }
+.form button { justify-self: start; }
+.form-note { margin: 0; font-size: 14px; min-height: 1.4em; }
+.band.dark .form-note { color: var(--on-ink-muted); }
+
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 56px; }
+.about-copy { display: grid; gap: 18px; }
+.about-copy p { margin: 0; max-width: 62ch; }
+
+.contact-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 0; border-top: 1px solid #3a3a37; padding-top: 24px; }
+.contact-list dt { font-family: var(--display); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--on-ink-muted); }
+.contact-list dd a { text-decoration: none; }
+.contact-list dd a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.contact-list dd { margin: 6px 0 0; font-size: 1.25rem; font-weight: 600; overflow-wrap: anywhere; }
+
+.foot { border-top: 1px solid var(--line); padding-block: 28px; font-size: 14px; color: var(--muted); }
+.foot-grid { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 860px) {
+  section { padding-block: 64px; }
+  .hero-grid, .split, .about { grid-template-columns: 1fr; gap: 36px; }
+  .hero-mark { display: none; }  /* the header already carries the mark on small screens */
+  .cards { grid-template-columns: 1fr; }
+  .card, .card + .card { padding: 24px 0; border-left: 0; }
+  .card + .card { border-top: 1px solid var(--line); }
+  .contact-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .form .row { grid-template-columns: 1fr; }
+  .brand-name { display: none; }
+  .nav a { padding: 8px 9px; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="brand" href="#home" aria-label="WCRE home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 569 777" width="569" height="777" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTphYzVhMjVhYy03MmZjLTRjNTQtOWVlZS1kODJlODNmYjRmZTcAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaKqevbSLl04Vd65GCYtHvI8AAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoxZTc1MjE1OC05MmQ5LTQwZDItOTc3Yy00N2I0N2JhN2QzYTBscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoML6qGifPhceAQCMdXumN6QAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggKkjs8o6Ads0VBn6r2bfmlI62+3YFMD+r0Ics7sb0RROkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaMkjQxOhUzLKhs9xUUahmW8AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCA6bQQpyXKR+WCqYG7eZmo/NYbwKwmVmfJ4pfaATy4dK2RuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBiWZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmFjNWEyNWFjLTcyZmMtNGM1NC05ZWVlLWQ4MmU4M2ZiNGZlNy9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjVhZjQzY2YxLTMyNGMtNDFkNi1hYjFiLTU0Yzg3NmFhYTMwNHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAqSOzyjoB2zRUGfqvZt+aUjrb7dgUwP6vQhyzuxvRFE6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggifrglmasG5xqnVoS0Pxuduh1zByD1B9IPQ7SrXnbdC+iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggC35D+Al4d9lRvyeBzeq2IbnA4LpI31bHyUSwQeTuBTd0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQNZpwETDoG+Td+YvYgL7cJU9n8xjKsJSbXYuYH5iLuJISweVJZnFj78ousqPpIs/I7xIi8HBW0LQeG8f51w9Vio=</c2pa:manifest></metadata><defs><clipPath id="wcreroof1"><polygon points="0.00,447.84 284.50,163.34 569.00,447.84 569.00,777.00 0.00,777.00"/></clipPath></defs><g fill="currentColor"><g clip-path="url(#wcreroof1)"><rect x="103.00" y="476.84" width="165.00" height="33.00"/><rect x="103.00" y="0.00" width="33.00" height="509.84"/><rect x="169.00" y="0.00" width="33.00" height="509.84"/><rect x="235.00" y="0.00" width="33.00" height="509.84"/><rect x="301.00" y="0.00" width="33.00" height="509.84"/><rect x="301.00" y="476.84" width="165.00" height="33.00"/><polygon points="301.00,179.84 466.00,344.84 466.00,386.84 301.00,221.84"/></g><rect x="103.00" y="542.84" width="33.00" height="165.00"/><rect x="103.00" y="542.84" width="165.00" height="33.00"/><rect x="103.00" y="608.84" width="165.00" height="33.00"/><rect x="235.00" y="542.84" width="33.00" height="99.00"/><polygon points="158.00,639.84 200.00,639.84 268.00,707.84 226.00,707.84"/><rect x="301.00" y="542.84" width="33.00" height="165.00"/><rect x="301.00" y="542.84" width="165.00" height="33.00"/><rect x="301.00" y="608.84" width="165.00" height="33.00"/><rect x="301.00" y="674.84" width="165.00" height="33.00"/><polygon points="70.00,289.17 284.50,74.67 499.00,289.17 499.00,331.17 284.50,116.67 70.00,331.17"/></g></svg><span class="brand-name">Williams Crew<br>Real Estate</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#homes">Buy</a>
+      <a href="#sell">Sell</a>
+      <a href="#rentals">Rent</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Fix &amp; flip · Buy &amp; hold · Residential &amp; commercial</p>
+        <h1>Better homes. Stronger blocks.</h1>
+        <p class="lede">Williams Crew Real Estate buys and restores homes, then sells them to new owners or keeps them as quality rentals. Every project has one goal: leave the community better than we found it.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="#sell">Sell your house</a>
+          <a class="btn btn-line" href="#rentals">Find a rental</a>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 569 777" width="569" height="777" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTphYzVhMjVhYy03MmZjLTRjNTQtOWVlZS1kODJlODNmYjRmZTcAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaKqevbSLl04Vd65GCYtHvI8AAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoxZTc1MjE1OC05MmQ5LTQwZDItOTc3Yy00N2I0N2JhN2QzYTBscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoML6qGifPhceAQCMdXumN6QAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggKkjs8o6Ads0VBn6r2bfmlI62+3YFMD+r0Ics7sb0RROkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaMkjQxOhUzLKhs9xUUahmW8AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCA6bQQpyXKR+WCqYG7eZmo/NYbwKwmVmfJ4pfaATy4dK2RuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBiWZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmFjNWEyNWFjLTcyZmMtNGM1NC05ZWVlLWQ4MmU4M2ZiNGZlNy9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjVhZjQzY2YxLTMyNGMtNDFkNi1hYjFiLTU0Yzg3NmFhYTMwNHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAqSOzyjoB2zRUGfqvZt+aUjrb7dgUwP6vQhyzuxvRFE6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggifrglmasG5xqnVoS0Pxuduh1zByD1B9IPQ7SrXnbdC+iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggC35D+Al4d9lRvyeBzeq2IbnA4LpI31bHyUSwQeTuBTd0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQNZpwETDoG+Td+YvYgL7cJU9n8xjKsJSbXYuYH5iLuJISweVJZnFj78ousqPpIs/I7xIi8HBW0LQeG8f51w9Vio=</c2pa:manifest></metadata><defs><clipPath id="wcreroof2"><polygon points="0.00,447.84 284.50,163.34 569.00,447.84 569.00,777.00 0.00,777.00"/></clipPath></defs><g fill="currentColor"><g clip-path="url(#wcreroof2)"><rect x="103.00" y="476.84" width="165.00" height="33.00"/><rect x="103.00" y="0.00" width="33.00" height="509.84"/><rect x="169.00" y="0.00" width="33.00" height="509.84"/><rect x="235.00" y="0.00" width="33.00" height="509.84"/><rect x="301.00" y="0.00" width="33.00" height="509.84"/><rect x="301.00" y="476.84" width="165.00" height="33.00"/><polygon points="301.00,179.84 466.00,344.84 466.00,386.84 301.00,221.84"/></g><rect x="103.00" y="542.84" width="33.00" height="165.00"/><rect x="103.00" y="542.84" width="165.00" height="33.00"/><rect x="103.00" y="608.84" width="165.00" height="33.00"/><rect x="235.00" y="542.84" width="33.00" height="99.00"/><polygon points="158.00,639.84 200.00,639.84 268.00,707.84 226.00,707.84"/><rect x="301.00" y="542.84" width="33.00" height="165.00"/><rect x="301.00" y="542.84" width="165.00" height="33.00"/><rect x="301.00" y="608.84" width="165.00" height="33.00"/><rect x="301.00" y="674.84" width="165.00" height="33.00"/><polygon points="70.00,289.17 284.50,74.67 499.00,289.17 499.00,331.17 284.50,116.67 70.00,331.17"/></g></svg></div>
+    </div>
+  </section>
+
+  <section class="what" aria-labelledby="what-h">
+    <div class="wrap">
+      <h2 id="what-h" class="section-h">What we do</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="tag">01 · Fix &amp; flip</span>
+          <h3>We restore homes for new owners</h3>
+          <p>We buy houses that need work, renovate them properly, and sell them to buyers ready to move in.</p>
+          <a href="#homes">See homes for sale</a>
+        </article>
+        <article class="card">
+          <span class="tag">02 · Buy &amp; hold</span>
+          <h3>We keep homes as long-term rentals</h3>
+          <p>Our rentals are renovated, maintained, and managed by us, so tenants deal directly with the owners.</p>
+          <a href="#rentals">See available rentals</a>
+        </article>
+        <article class="card">
+          <span class="tag">03 · Commercial</span>
+          <h3>We invest in neighborhood buildings</h3>
+          <p>We also take on small commercial properties that can serve the community again.</p>
+          <a href="#contact">Talk to us</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="sell" class="band dark" aria-labelledby="sell-h">
+    <div class="wrap split">
+      <div>
+        <h2 id="sell-h" class="section-h">Sell your house to us</h2>
+        <p class="lede">Inherited a house, behind on repairs, or just ready to move on? We buy homes as-is. Tell us about the property and we will follow up to talk through an offer.</p>
+        <ul class="ticks">
+          <li>No repairs or cleanup needed before you sell</li>
+          <li>You choose the closing date</li>
+          <li>You deal directly with the owners, not a call center</li>
+        </ul>
+      </div>
+      <form class="form" data-form="seller" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="Seller lead from wcre.us">
+        <div class="row">
+          <label for="s-name">Your name<input id="s-name" name="name" autocomplete="name" required></label>
+          <label for="s-phone">Phone<input id="s-phone" name="phone" type="tel" autocomplete="tel" required></label>
+        </div>
+        <label for="s-email">Email<input id="s-email" name="email" type="email" autocomplete="email"></label>
+        <label for="s-address">Property address<input id="s-address" name="address" autocomplete="street-address" required></label>
+        <div class="row">
+          <label for="s-condition">Condition
+            <select id="s-condition" name="condition">
+              <option>Move-in ready</option><option>Needs some updates</option><option>Needs major repairs</option><option>Not sure</option>
+            </select>
+          </label>
+          <label for="s-timeline">When do you want to sell?
+            <select id="s-timeline" name="timeline">
+              <option>As soon as possible</option><option>Within 3 months</option><option>Within 6 months</option><option>Just exploring</option>
+            </select>
+          </label>
+        </div>
+        <label for="s-notes">Anything else we should know?<textarea id="s-notes" name="notes" rows="3"></textarea></label>
+        <button class="btn btn-invert" type="submit">Request an offer</button>
+        <p class="form-note" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="homes" aria-labelledby="homes-h">
+    <div class="wrap split">
+      <div>
+        <h2 id="homes-h" class="section-h">Homes for sale</h2>
+        <p class="lede">Our renovated homes are listed here first. There are no homes on the market right now. Leave your email and we will tell you when the next one is ready.</p>
+      </div>
+      <form class="form inline" data-form="buyer" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="Buyer list signup from wcre.us">
+        <label for="b-email">Email<input id="b-email" name="email" type="email" autocomplete="email" required></label>
+        <label for="b-area">Area or neighborhood you want<input id="b-area" name="area"></label>
+        <button class="btn btn-solid" type="submit">Notify me</button>
+        <p class="form-note" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="rentals" class="band" aria-labelledby="rent-h">
+    <div class="wrap split">
+      <div>
+        <h2 id="rent-h" class="section-h">Rentals</h2>
+        <p class="lede">We rent homes we have restored ourselves and keep them in good repair. Tell us what you are looking for and we will reach out when a unit fits.</p>
+        <p class="small">Williams Crew Real Estate is an Equal Housing Opportunity provider.</p>
+      </div>
+      <form class="form" data-form="renter" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="Rental inquiry from wcre.us">
+        <div class="row">
+          <label for="r-name">Your name<input id="r-name" name="name" autocomplete="name" required></label>
+          <label for="r-phone">Phone<input id="r-phone" name="phone" type="tel" autocomplete="tel"></label>
+        </div>
+        <label for="r-email">Email<input id="r-email" name="email" type="email" autocomplete="email" required></label>
+        <div class="row">
+          <label for="r-beds">Bedrooms
+            <select id="r-beds" name="bedrooms"><option>1</option><option>2</option><option>3</option><option>4+</option></select>
+          </label>
+          <label for="r-move">Move-in date<input id="r-move" name="move_in" type="date"></label>
+        </div>
+        <button class="btn btn-solid" type="submit">Send inquiry</button>
+        <p class="form-note" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="wrap about">
+      <h2 id="about-h" class="section-h">About WCRE</h2>
+      <div class="about-copy">
+        <p class="lede">Williams Crew Real Estate is a local, owner-operated real estate company. We buy properties others pass over, restore them with care, and stay accountable to the neighbors who live next door.</p>
+        <p>When we sell a home, we want the buyer to be proud of it. When we rent one, we want it to be a place people are glad to come home to. That is what leaving the community better looks like to us.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="band dark" aria-labelledby="contact-h">
+    <div class="wrap contact">
+      <h2 id="contact-h" class="section-h">Contact</h2>
+      <dl class="contact-list">
+        <div><dt>Email</dt><dd><a href="mailto:info@wcre.us">info@wcre.us</a></dd></div>
+        <div><dt>Call or text Derrick</dt><dd><a href="tel:+15133608285">(513) 360-8285</a></dd></div>
+        <div><dt>Call or text Tomeka</dt><dd><a href="tel:+15138572579">(513) 857-2579</a></dd></div>
+      </dl>
+      <p class="small">Serving Greater Cincinnati.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <span>© <span data-year>2026</span> Williams Crew Real Estate LLC, doing business as WCRE.</span>
+    <span>Equal Housing Opportunity</span>
+  </div>
+</footer>
+
+<script>document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+// Forms post to Formspree once a real form ID replaces YOUR_FORM_ID. Until then, show a notice instead of sending.
+document.querySelectorAll('form[data-form]').forEach(form => {
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const note = form.querySelector('.form-note');
+    if (form.action.includes('YOUR_FORM_ID')) { note.textContent = 'Preview only: this form is not connected yet.'; return; }
+    note.textContent = 'Sending…';
+    try {
+      const r = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      if (r.ok) { form.reset(); note.textContent = 'Thanks. We received your message and will be in touch soon.'; }
+      else note.textContent = 'That did not go through. Please try again, or email info@wcre.us.';
+    } catch { note.textContent = 'That did not go through. Please check your connection and try again.'; }
+  });
+});
+</script>
+</body>
+</html>
